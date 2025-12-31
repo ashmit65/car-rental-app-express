@@ -1,0 +1,139 @@
+{{> header}}
+<title>Cental - Car Rent | Admin Section</title>
+{{> navbar}}
+
+{{> hero}}
+
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col-md-3">
+            {{> sidebar}}
+        </div>
+        <div class="col-md-9">
+            <h5 class="bg-primary text-center text-light p-2">Testimonial <a href="/admin/testimonial"><i
+                        class="fa fa-backward text-light float-end"></i></a></h5>
+                        <form action="/admin/car/update/{{data._id}}" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Name*</label>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Full Name"
+                            class="form-control {{#if errorMessage.name}}border-danger{{else}}border-primary{{/if}}"
+                            value="{{data.name}}"
+                        >
+                        {{#if errorMessage.name}}
+                        <p class="text-danger">{{errorMessage.name}}</p>
+                        {{/if}}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Pic*</label>
+                        <input
+                            type="file"
+                            name="pic"
+                            class="form-control {{#if errorMessage.pic}}border-danger{{else}}border-primary{{/if}}"
+                        >
+                        {{#if errorMessage.pic}}
+                        <p class="text-danger">{{errorMessage.pic}}</p>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Rating*</label>
+                        <input
+                            type="number"
+                            name="rating"
+                            placeholder="Rating"
+                            min="1"
+                            max="5"
+                            class="form-control {{#if errorMessage.rating}}border-danger{{else}}border-primary{{/if}}"
+                            value="{{data.rating}}"
+                        >
+                        {{#if errorMessage.rating}}
+                        <p class="text-danger">{{errorMessage.rating}}</p>
+                        {{/if}}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Rent*</label>
+                        <input
+                            type="number"
+                            name="rent"
+                            placeholder="Rent/Day"
+                            min="1"
+                            class="form-control {{#if errorMessage.rent}}border-danger{{else}}border-primary{{/if}}"
+                            value="{{data.rent}}"
+                        >
+                        {{#if errorMessage.rent}}
+                        <p class="text-danger">{{errorMessage.rating}}</p>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Seating Capacity*</label>
+                        <input
+                            type="number"
+                            name="seatingCapacity"
+                            placeholder="Seating Capacity"
+                            min="1"
+                            class="form-control {{#if errorMessage.seatingCapacity}}border-danger{{else}}border-primary{{/if}}"
+                            value="{{data.seatingCapacity}}"
+                        >
+                        {{#if errorMessage.seatingCapacity}}
+                        <p class="text-danger">{{errorMessage.seatingCapacity}}</p>
+                        {{/if}}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Mode*</label>
+                        <select
+                            name="mode"
+                            class="form-control {{#if errorMessage.mode}}border-danger{{else}}border-primary{{/if}}"
+                        >
+                            <option  {{checkDropDown data.mode "AMT"}}>AMT</option>
+                            <option {{checkDropDown data.mode "Manul"}}>Manul</option>
+                        </select>
+                    </div>
+                </div>
+
+                
+
+                <div class="row">
+                     <div class="col-md-6 mb-3">
+                        <label>Fuel Type*</label>
+                        <select
+                            name="fuelType"
+                            class="form-control {{#if errorMessage.active}}border-danger{{else}}border-primary{{/if}}"
+                        >
+                            <option value="Petrol" {{checkActive data.fuelType "Petrol"}}>Petrol</option>
+                            <option value="Desal" {{checkActive data.fuelType "Desal"}}>Desal</option>
+                            <option value="CNG" {{checkActive data.fuelType "CNG"}}>CNG</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Active*</label>
+                        <select
+                            name="active"
+                            class="form-control {{#if errorMessage.active}}border-danger{{else}}border-primary{{/if}}"
+                        >
+                            <option value="true" {{checkActive data.active "true"}}>Yes</option>
+                            <option value="false" {{checkActive data.active "false"}}>No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{{> footer}}

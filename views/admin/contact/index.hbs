@@ -1,0 +1,61 @@
+{{> header}}
+<title>Cental - Car Rent | Admin Section</title>
+{{> navbar}}
+
+{{> hero}}
+
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col-md-3">
+            {{> sidebar}}
+        </div>
+        <div  class="col-md-9">
+            <h5 class="bg-primary text-center text-light p-2">
+                Contact Us Queries
+            </h5>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                            <th>Active</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data}}
+                            <tr>
+                                <td>{{_id}}</td>
+                                <td>{{name}}</td>
+                                <td>{{email}}</td>
+                                <td>{{phone}}</td>
+                                <td>{{subject}}</td>
+                                <td>
+                                    <div class="testimonial-box">
+                                        {{message}}
+                                    </div>
+                                </td>
+                                <td>{{date}}</td>
+                                <td class="{{#if active}}text-success {{else}}text-danger{{/if}}">
+                                    {{#if active}}Yes {{else}}No{{/if}}
+                                </td>
+                                <td><a href="/admin/contact/show/{{_id}}"><i class="fa fa-eye"></i></a></td>
+                                <td>{{#if active}}{{else}}<a href="/admin/contact/delete/{{_id}}"><i class="fa fa-trash text-danger">{{/if}}</i></a></td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{> footer}}

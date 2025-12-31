@@ -1,0 +1,63 @@
+
+<div class="container-fluid nav-bar sticky-top bg-white shadow-sm px-0 px-lg-4">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+      <!-- Brand -->
+      <a href="/" class="navbar-brand d-flex align-items-center gap-2">
+        <i class="fas fa-car-alt text-primary fs-3"></i>
+        <span class="fw-bold fs-4 text-primary">Cental</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- Links -->
+        <div class="navbar-nav mx-auto gap-lg-2">
+          <a href="/" class="nav-link active">Home</a>
+          <a href="/booking" class="nav-link">Booking</a>
+          <a href="/about" class="nav-link">About</a>
+          <a href="/service" class="nav-link">Service</a>
+          <a href="/features" class="nav-link">Features</a>
+          <a href="/cars" class="nav-link">Cars</a>
+          <a href="/testimonials" class="nav-link">Testimonial</a>
+          <a href="/contact" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Auth -->
+        <!-- Auth -->
+{{#if (isLogin session)}}
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle px-4" data-bs-toggle="dropdown">
+    <i class="fas fa-user me-2"></i> {{userName session}}
+  </button>
+
+  <ul class="dropdown-menu dropdown-menu-end shadow">
+    <li>
+      <a class="dropdown-item" href="/admin">My Profile</a>
+    </li>
+    <li><hr class="dropdown-divider"></li>
+    <li>
+      <a class="dropdown-item text-danger" href="/admin/logout">
+        Logout
+      </a>
+    </li>
+  </ul>
+</div>
+{{else}}
+{{!-- <a href="/admin/login" class="btn btn-primary rounded-pill px-4">
+  Login
+</a> --}}
+{{/if}}
+
+
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+    <!-- Navbar & Hero End -->

@@ -1,0 +1,130 @@
+<form action="/booking" method="post" class="booking-form">
+
+  <!-- NAME -->
+  <div class="mb-3 ">
+    <label class="form-label small text-muted">Full Name</label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fas fa-user"></i>
+      </span>
+      <input
+        class="form-control {{#if errorMessage.name}}is-invalid{{/if}}"
+        type="text"
+        name="name"
+        value="{{data.name}}"
+        placeholder="Enter full name"
+      >
+    </div>
+  </div>
+
+  <!-- EMAIL & PHONE -->
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="form-label small text-muted">Email</label>
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <input
+          class="form-control {{#if errorMessage.email}}is-invalid{{/if}}"
+          type="email"
+          name="email"
+          value="{{data.email}}"
+          placeholder="Email address"
+        >
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label small text-muted">Phone</label>
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="fas fa-phone"></i>
+        </span>
+        <input
+          class="form-control {{#if errorMessage.phone}}is-invalid{{/if}}"
+          type="tel"
+          name="phone"
+          value="{{data.phone}}"
+          placeholder="Phone number"
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE -->
+  <input type="hidden" name="page" value="{{title}}">
+
+  <!-- PICKUP -->
+  <div class="mb-3">
+    <label class="form-label small text-muted">Pick Up Location</label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fas fa-map-marker-alt"></i>
+      </span>
+      <input
+        class="form-control {{#if errorMessage.pickUp}}is-invalid{{/if}}"
+        type="text"
+        name="pickUp"
+        value="{{data.pickUp}}"
+        placeholder="Pick up location"
+      >
+    </div>
+  </div>
+
+  <!-- DROP -->
+  <div class="mb-3">
+    <label class="form-label small text-muted">Drop Off Location</label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fas fa-map-marker-alt"></i>
+      </span>
+      <input
+        class="form-control {{#if errorMessage.drop}}is-invalid{{/if}}"
+        type="text"
+        name="drop"
+        value="{{data.drop}}"
+        placeholder="Drop off location"
+      >
+    </div>
+  </div>
+
+  <!-- CAR & DATE -->
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="form-label small text-muted">Car Type</label>
+      <select
+        class="form-select {{#if errorMessage.car}}is-invalid{{/if}}"
+        name="car"
+      >
+        <option value="" disabled selected>Select car type</option>
+        {{#each cars}}
+          <option value="{{name}}" {{checkDropDown data.car true}}>
+            {{name}}
+          </option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label class="form-label small text-muted">Pick Up Date</label>
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="fas fa-calendar-alt"></i>
+        </span>
+        <input
+          class="form-control {{#if errorMessage.pickUpDate}}is-invalid{{/if}}"
+          type="date"
+          value="{{data.pickUpDate}}"
+          name="pickUpDate"
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBMIT -->
+  <button class="btn btn-primary w-100 py-3 fw-semibold rounded-pill">
+    Book Now
+  </button>
+
+</form>

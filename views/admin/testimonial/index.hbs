@@ -1,0 +1,62 @@
+{{> header}}
+<title>Cental - Car Rent | Admin Section</title>
+{{> navbar}}
+
+{{> hero}}
+
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col-md-3">
+            {{> sidebar}}
+        </div>
+        <div  class="col-md-9">
+            <h5 class="bg-primary text-center text-light p-2">
+                Testimonial
+                <a href="/admin/testimonial/create">
+                    <i class="fa fa-plus text-light float-end"></i>
+                </a>
+            </h5>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Message</th>
+                            <th>Active</th>
+                            <th>Pic</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data}}
+                            <tr>
+                                <td>{{_id}}</td>
+                                <td>{{name}}</td>
+                                <td>
+                                    <div class="testimonial-box">
+                                        {{message}}
+                                    </div>
+                                </td>
+                                <td class="{{#if active}}text-success {{else}}text-danger{{/if}}">
+                                    {{#if active}}Yes {{else}}No{{/if}}
+                                </td>
+                                <td>
+                                    <a href="/{{pic}}" target="_blank">
+                                        <img src="/{{pic}}" height="50px" width="50px" alt="">
+                                    </a>
+                                </td>
+                                <td><a href="/admin/testimonial/edit/{{_id}}"><i class="fa fa-edit"></i></a></td>
+                                <td><a href="/admin/testimonial/delete/{{_id}}"><i class="fa fa-trash text-danger"></i></a></td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{> footer}}

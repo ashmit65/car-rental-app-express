@@ -1,0 +1,87 @@
+<div class="header-carousel position-relative">
+  <div id="carouselId" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselId" data-bs-slide-to="0"
+              class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#carouselId" data-bs-slide-to="1"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-bg" style="background-image:url('img/carousel-2.jpg')"></div>
+
+        <div class="carousel-caption">
+          <div class="container py-5">
+            <div class="row align-items-center g-5">
+
+              <!-- Booking Form -->
+              <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="bg-white rounded-4 shadow-lg p-4 p-lg-5">
+                  <h5 class="text-primary fw-bold mb-4">
+                    Continue Car Reservation
+                  </h5>
+                  {{> form}}
+                </div>
+              </div>
+
+              <!-- Hero Text -->
+              <div class="col-lg-6 d-none d-lg-block wow fadeInRight" data-wow-delay="0.3s">
+                <h1 class="display-5 fw-bold text-white mb-3">
+                  Save <span class="text-primary">15%</span> on Your Next Ride
+                </h1>
+                <p class="lead text-white-50 mb-4">
+                  Premium cars • Easy booking • Trusted service
+                </p>
+                <a href="/cars" class="btn btn-primary btn-lg rounded-pill px-5">
+                  Browse Cars
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-bg" style="background-image:url('img/carousel-1.jpg')"></div>
+
+        <div class="carousel-caption">
+          <div class="container py-5">
+            <div class="row align-items-center g-5">
+
+              <!-- Booking Form -->
+              <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="bg-white rounded-4 shadow-lg p-4 p-lg-5">
+                  <h5 class="text-primary fw-bold mb-4">
+                    Continue Car Reservation
+                  </h5>
+                  {{> form}}
+                </div>
+              </div>
+
+              <!-- Hero Text -->
+              <div class="col-lg-6 d-none d-lg-block wow fadeInRight" data-wow-delay="0.3s">
+                <h1 class="display-5 fw-bold text-white mb-3">
+                  Choose the Perfect Car for Your Journey
+                </h1>
+                <p class="lead text-white-50 mb-4">
+                  Affordable rentals across India
+                </p>
+                <a href="/booking" class="btn btn-primary btn-lg rounded-pill px-5">
+                  Book Now
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

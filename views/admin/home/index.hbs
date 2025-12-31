@@ -1,0 +1,85 @@
+{{> header}}
+<title>Cental - Car Rent | Admin Section</title>
+{{> navbar}}
+
+{{!-- {{> hero}} --}}
+
+<div class="container-fluid my-3">
+  <div class="row">
+    
+    <!-- Sidebar -->
+    <div class="col-md-3">
+      {{> sidebar}}
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9">
+      <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body">
+
+          <h5 class="text-primary fw-bold mb-4">
+            My Profile
+          </h5>
+
+          <div class="row g-4 align-items-center">
+
+            <!-- Profile Image -->
+            <div class="col-md-4 text-center">
+              {{#if data.pic}}
+                <img src="{{data.pic}}" class="img-fluid rounded-circle shadow"
+                     style="height:220px;width:220px;object-fit:cover;" alt="">
+              {{else}}
+                <img src="/img/noimage.jpeg" class="img-fluid rounded-circle shadow"
+                     style="height:220px;width:220px;object-fit:cover;" alt="">
+              {{/if}}
+            </div>
+
+            <!-- Profile Details -->
+            <div class="col-md-8">
+              <table class="table table-borderless align-middle">
+                <tbody>
+                  <tr>
+                    <th class="text-muted w-25">Name</th>
+                    <td class="fw-semibold">{{data.name}}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-muted">Username</th>
+                    <td>{{data.username}}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-muted">Email</th>
+                    <td>{{data.email}}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-muted">Phone</th>
+                    <td>{{data.phone}}</td>
+                  </tr>
+                  <tr>
+                    <th class="text-muted">Role</th>
+                    <td>
+                      <span class="badge bg-primary px-3 py-2">
+                        {{data.role}}
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <a href="/admin/update-profile"
+                 class="btn btn-primary px-4 mt-3">
+                Update Profile
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+{{> footer}}

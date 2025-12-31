@@ -1,0 +1,75 @@
+{{> header}}
+<title>Cental - Car Rent | Admin Section</title>
+{{> navbar}}
+
+{{> hero}}
+
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col-md-3">
+            {{> sidebar}}
+        </div>
+        <div class="col-md-9">
+            <h5 class="bg-primary text-center text-light p-2">
+                Booking Queries
+            </h5>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Car</th>
+                            <th>Pickup Location</th>
+                            <th>Drop Location</th>
+                            <th>Date</th>
+                            <th>Create Date</th>
+                            <th>Active</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data}}
+                        <tr>
+                            <td>{{_id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td>{{phone}}</td>
+                            <td>{{car}}</td>
+                            <td>{{pickUp}}</td>
+                            <td>{{drop}}</td>
+                            <td>{{getDate pickUpDate}}</td>
+                            <td>{{getDate date}}</td>
+
+                            <td class="{{#if active}}text-success{{else}}text-danger{{/if}}">
+                                {{#if active}}Yes{{else}}No{{/if}}
+                            </td>
+
+                            <td>
+                                <a href="/admin/booking/show/{{_id}}">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
+
+                            <td>
+                                {{#unless active}}
+                                <a href="/admin/booking/delete/{{_id}}">
+                                    <i class="fa fa-trash text-danger"></i>
+                                </a>
+                                {{/unless}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{> footer}}

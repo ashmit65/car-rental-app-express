@@ -1,0 +1,92 @@
+<!-- Car categories Start -->
+<div class="container-fluid categories pb-5 py-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize mb-3">Vehicle <span class="text-primary">Categories</span></h1>
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet nemo expedita asperiores
+                commodi accusantium at cum harum, excepturi, quia tempora cupiditate! Adipisci facilis modi quisquam
+                quia distinctio,
+            </p>
+        </div>
+        <div class="categories-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">
+            {{#each cars}}
+            <div class="categories-item p-4">
+                <div class="categories-item-inner">
+                    <div class="categories-img rounded-top">
+                        <img src="/{{pic}}" style="height: 200px;" class="img-fluid w-100 rounded-top" alt="">
+                    </div>
+                    <div class="categories-content rounded-bottom p-4">
+                        <h4>{{name}}</h4>
+                        <div class="categories-review mb-4">
+                            <div class="me-3">{{rating}} review</div>
+                            <div class="d-flex justify-content-center text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">&#8377;{{rent}}</h4>
+                        </div>
+                        <div class="row gy-2 gx-0 text-center mb-4">
+                            <div class="col-4 border-end border-white">
+                                <i class="fa fa-users text-dark"></i> <span class="text-body ms-1">{{seatingCapacity}} Seat</span>
+                            </div>
+                            <div class="col-4 border-end border-white">
+                                <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">{{mode}}</span>
+                            </div>
+                            <div class="col-4">
+                                <i class="fa fa-gas-pump text-dark"></i> <span class="text-body ms-1">{{fuelType}}</span>
+                            </div>
+                        </div>
+                        <a href="/booking" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<!-- Car categories End -->
+
+<!-- Car Steps Start -->
+<div class="container-fluid steps py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize text-white mb-3">Cental<span class="text-primary"> Process</span></h1>
+            <p class="mb-0 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet nemo expedita
+                asperiores commodi accusantium at cum harum, excepturi, quia tempora cupiditate! Adipisci facilis modi
+                quisquam quia distinctio,
+            </p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="steps-item p-4 mb-4">
+                    <h4>Come In Contact</h4>
+                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, dolorem!</p>
+                    <div class="setps-number">01.</div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="steps-item p-4 mb-4">
+                    <h4>Choose A Car</h4>
+                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, dolorem!</p>
+                    <div class="setps-number">02.</div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="steps-item p-4 mb-4">
+                    <h4>Enjoy Your Ride</h4>
+                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, dolorem!</p>
+                    <div class="setps-number">03.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Car Steps End -->
+
+
+{{> banner}}
