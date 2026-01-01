@@ -3,8 +3,7 @@
 Cental is a full-stack car rental web application that allows users to browse cars, make bookings, and manage rentals.  
 The project is built using **Node.js, Express, MongoDB**, and **HBS**, focusing on real-world backend logic, authentication, and session management.
 
-🔗 **Live Demo:** https://your-live-link.com  
-📄 **Detailed Explanation:** [Project Explanation](./projectexplanation.md)
+🔗 **Live Demo:** https://car-rental-app-express-2.onrender.com 
 
 ---
 
